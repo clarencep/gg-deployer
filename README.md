@@ -7,4 +7,3 @@ This is a simple deployer written in go, using git.
 It is recommend to use docker - see also [gg-deployer-docker](https://github.com/clarencep/gg-deployer-docker)
 
 
-
