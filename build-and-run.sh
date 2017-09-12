@@ -1,3 +1,3 @@
 #!/bin/sh
 
-go build && ./gg-deployer --debug  -c ./gg-deployer.config.json
+go build && exec ./gg-deployer --debug  -c ./gg-deployer.config.json

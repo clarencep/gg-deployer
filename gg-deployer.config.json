@@ -2,5 +2,25 @@
     "http_server": {
         "host": "0.0.0.0",
         "port": 8088
-    }
+    },
+    "projects": [
+        {
+            "type": "github",
+            "repo": "someuser/somerepo",
+            "repo_url": "git@github.com:someuser/somerepo.git",
+            "secret": "!!EnterYourSecretHere!!",
+            "store": "/path/to/store/the/repo",
+            "target": "/path/to/deploy/target",
+            "branch": "master"
+        },
+        {
+            "type": "gogs",
+            "repo": "someuser/somerepo",
+            "repo_url": "git@git.xxxx.com:someuser/somerepo.git",
+            "secret": "!!EnterYourSecretHere!!",
+            "store": "/path/to/store/the/repo",
+            "target": "/path/to/deploy/target",
+            "branch": "master"
+        }
+    ]
 }
