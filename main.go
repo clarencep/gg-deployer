@@ -291,6 +291,10 @@ func githubPushedHandler(w http.ResponseWriter, r *http.Request) {
 	debugf("request headers: %v", r.Header)
 
 	err := func() error {
+		if r.Method != "POST" {
+			return &HTTPError{Message: "Error: invalid request method."}
+		}
+
 		reqSign := firstOf(r.Header["X-Hub-Signature"])
 		if reqSign == "" {
 			debugf("Error: no signature in request.")
@@ -389,6 +393,10 @@ func gogsPushedHandler(w http.ResponseWriter, r *http.Request) {
 	debugf("request headers: %v", r.Header)
 
 	err := func() error {
+		if r.Method != "POST" {
+			return &HTTPError{Message: "Error: invalid request method."}
+		}
+
 		reqSign := firstOf(r.Header["X-Gogs-Signature"])
 		if reqSign == "" {
 			debugf("Error: no signature in request.")
@@ -598,6 +606,13 @@ func (httpError *HTTPError) Error() string {
 }
 
 func (project *Project) deploy() {
+	defer func() {
+		if err:= recover(); err != nil {
+			fmt.Println("=======Recover error:==========")
+			fmt.Println(err)
+		}
+	}()
+
 	project.lock.Lock()
 	defer project.lock.Unlock()
 
