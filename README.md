@@ -10,7 +10,7 @@ gg-deployer [--debug] -c <config.json>
 
 `config.json` is the configuration file. Its content is like:
 
-```json
+```
 {
     // how many worker go-routines to prepare for incoming deploy jobs
     "max_workers": 5, 
