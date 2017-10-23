@@ -47,6 +47,9 @@ gg-deployer [--debug] -c <config.json>
             // Which branch to deploy(checkout).
             "branch": "master",
 
+            // as which user to run the deploy command
+            "run_as": "www",
+
             // script to run after checkout/pull done, in store directory.
             "post_checkout_script": "echo This is post checkout script",
 

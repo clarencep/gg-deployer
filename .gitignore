@@ -2,3 +2,6 @@
 *.log
 .vscode/
 tests/
+*.exe
+*.o
+gg-deployer
