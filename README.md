@@ -82,6 +82,23 @@ The deploy process
 4. Run `project.post_rsync_script` in `project.target` directory.
 
 
+Add webhook
+------------
+
+1. Set the `Payload URL` to `http://x.x.x.x:xx/github/pushed`
+2. Set the `Content type` to `application/json`
+3. Fill your `Secret`
+4. Select `Just the push event`.
+5. Finish and save.
+6. The you can try a push.
+
+# URLs:
+
+- `/` => a simple 'Hello world' to test if the server is OK.
+- `/github/pushed` => a handler for github
+- `/gogs/pushed` => a handler for gogs.
+- `/list-jobs` => a status list of all running jobs.
+
 
 # FAQ
 
