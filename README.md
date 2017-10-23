@@ -54,7 +54,11 @@ gg-deployer [--debug] -c <config.json>
             "post_checkout_script": "echo This is post checkout script",
 
             // script to run after rsync done, in target directory
-            "post_rsync_script": "echo This is post rsync script"
+            "post_rsync_script": "echo This is post rsync script",
+
+            // override default deploy commands.
+            // if `$exec` is not empty, only `$exec` will be executed. default checkout and rsync command will be ignored.
+            "exec": ""
         },
         {
             "type": "gogs",

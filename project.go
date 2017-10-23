@@ -28,7 +28,9 @@ func (project *Project) deploy() {
 
 	debugf("Begin to deploy project: %v", project)
 
-	if project.Type == "github" {
+	if project.Exec != "" {
+		project.execProgram("sh", "-xc", project.Exec)
+	} else if project.Type == "github" {
 		project.deployGithubProject()
 	} else if project.Type == "gogs" {
 		project.deployGogsProject()

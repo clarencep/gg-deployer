@@ -39,6 +39,7 @@ type ProjectConfig struct {
 	RunAs              string `json:"run_as"`
 	PostCheckoutScript string `json:"post_checkout_script"`
 	PostRsyncScript    string `json:"post_rsync_script"`
+	Exec               string `json:"exec"`
 }
 
 // GGDConfig is the configuration for gg-deployer
@@ -185,8 +186,10 @@ func loadConfig(configFilePath string) {
 			panic(fmt.Errorf("Invalid project secret: %#v", projectConfig))
 		}
 
-		if projectConfig.Target == "" {
-			panic(fmt.Errorf("Invalid project target: %#v", projectConfig))
+		if projectConfig.Exec == "" {
+			if projectConfig.Target == "" {
+				panic(fmt.Errorf("Invalid project target: %#v", projectConfig))
+			}
 		}
 
 		if projectConfig.Branch == "" {
