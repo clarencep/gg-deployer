@@ -83,7 +83,7 @@ The deploy process
 
 How to checkout files as another user, for example `www`, not `root`?
 ---------------------------------------------------------------------
-You can run gg-deployer use `su` command. For example: `su -s /bin/sh -c 'gg-deployer -c <config.json>' www`.
+You can use "run_as" field to specify which user to run the commands.
 
 
 
