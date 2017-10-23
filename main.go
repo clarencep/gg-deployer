@@ -101,7 +101,7 @@ func main() {
 
 	// Start the HTTP server
 	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/test", testHandler)
+	//http.HandleFunc("/test", testHandler)
 	http.HandleFunc("/github/pushed", githubPushedHandler)
 	http.HandleFunc("/gogs/pushed", gogsPushedHandler)
 	http.HandleFunc("/list-jobs", listJobsHandler)
@@ -202,7 +202,7 @@ func loadConfig(configFilePath string) {
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	// debugf("Enter homeHandler...")
 
-	fmt.Fprintf(w, "<h1>Hello world</h1>")
+	fmt.Fprintf(w, "<h1>Hello. This is ggd.</h1>")
 
 }
 
