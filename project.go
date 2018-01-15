@@ -147,6 +147,7 @@ func (project *Project) gitCheckoutToDir(repoURL, targetDir, branch string) {
 			fmt.Sprintf("git checkout ."),
 			fmt.Sprintf("git fetch origin '%s'", branch),
 			fmt.Sprintf("git reset --hard origin/'%s'", branch),
+			fmt.Sprintf("git pull --no-edit origin '%s'", branch),
 		}
 
 	} else {
